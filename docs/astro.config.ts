@@ -11,9 +11,7 @@ export default defineConfig({
   integrations: [
     starlight({
       credits: true,
-      editLink: {
-        baseUrl: 'https://github.com/HiDeoo/starlight-theme-rapide/edit/main/docs/',
-      },
+   
       head: [
         {
           tag: 'meta',
@@ -30,9 +28,22 @@ export default defineConfig({
       plugins: [starlightThemeRapide()],
       sidebar: [
         {
-          label: 'Start Here',
-          items: ['getting-started', 'customization'],
+        label: 'Start Here',
+        items: [
+          { label: 'Welcome to IoT Lab', slug: 'getting-started' },
+          { label: 'What is IoT?', slug: 'what-is-iot' },
+          { label: 'What You Need', slug: 'what-you-need' },
+          { label: 'How to Use This Lab', slug: 'how-to-use' },
+        ],
         },
+        {
+        label: 'Microcontrollers',
+        items: [
+          { label: 'Overview', slug: 'microcontrollers' },
+          { label: 'ESP32 with Arduino IDE', slug: 'microcontrollers/esp32-arduino-ide',
+    },
+  ],
+},
         {
           label: 'Resources',
           items: [{ label: 'Plugins and Tools', link: '/resources/starlight/' }],
@@ -46,7 +57,7 @@ export default defineConfig({
         { href: 'https://bsky.app/profile/hideoo.dev', icon: 'blueSky', label: 'Bluesky' },
         { href: 'https://github.com/HiDeoo/starlight-theme-rapide', icon: 'github', label: 'GitHub' },
       ],
-      title: 'Starlight Rapide',
+      title: 'Internet of Things Lab',
     }),
   ],
   site,

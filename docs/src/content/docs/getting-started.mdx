@@ -1,47 +1,55 @@
 ---
+
 title: Getting Started
-description: Learn how to use the Starlight Rapide theme in your documentation.
----
+description: Start learning IoT with simple explanations, hardware, sensors, and beginner projects.
+---------------------------------------------------------------------------------------------------
 
-A [Starlight](https://starlight.astro.build) theme inspired by the Visual Studio Code [Vitesse theme](https://marketplace.visualstudio.com/items?itemName=antfu.theme-vitesse).
-Check out the various [examples](/examples/asides/) to see the theme in action.
+# Welcome to IoT Lab
 
-## Prerequisites
+Welcome to **Internet of Things Lab**, a beginner-friendly guide for learning the Internet of Things (IoT).
 
-You will need to have a Starlight website set up.
-If you don't have one yet, you can follow the ["Getting Started"](https://starlight.astro.build/getting-started) guide in the Starlight docs to create one.
+This documentation is designed to help students understand IoT step by step, from basic concepts to building simple projects using microcontrollers, sensors, displays, and internet connectivity.
 
-## Installation
+## What You Will Learn
 
-import { Steps } from '@astrojs/starlight/components'
-import { PackageManagers } from '@hideoo/starlight-plugins-docs-components'
+In this IoT Lab, you will learn:
 
-<Steps>
+* What IoT is and how it works
+* How to use microcontrollers such as ESP32 and NodeMCU
+* How to connect sensors and output devices
+* How to send data through Wi-Fi
+* How to create simple IoT monitoring and control systems
+* How to build practical IoT projects
 
-1. The Starlight Rapide theme is a Starlight [plugin](https://starlight.astro.build/reference/plugins/) that you can install using your favorite package manager:
+## Start Here
 
-   <PackageManagers pkg="starlight-theme-rapide" />
+If you are new to IoT, follow these sections first:
 
-2. Configure the plugin in your Starlight [configuration](https://starlight.astro.build/reference/configuration/#plugins) in the `astro.config.mjs` file.
+1. **What is IoT?**
+   Learn the basic concept of the Internet of Things.
 
-   ```diff lang="js"
-   // astro.config.mjs
-   import starlight from '@astrojs/starlight'
-   import { defineConfig } from 'astro/config'
-   +import starlightThemeRapide from 'starlight-theme-rapide'
+2. **What You Need**
+   Learn about the hardware and software needed to start building IoT projects.
 
-   export default defineConfig({
-     integrations: [
-       starlight({
-   +      plugins: [starlightThemeRapide()],
-         title: 'My Docs',
-       }),
-     ],
-   })
-   ```
+3. **How to Use This Lab**
+   Learn how to follow the tutorials and project guides.
 
-3. [Start the development server](https://starlight.astro.build/getting-started/#start-the-development-server) to preview the theme in action.
+## What We Will Use
 
-</Steps>
+Most projects in this documentation will use beginner-friendly hardware such as:
 
-That's it! You should now see the Starlight Rapide theme applied to your Starlight website.
+* ESP32
+* NodeMCU ESP8266
+* Sensors
+* OLED displays
+* LEDs and buzzers
+* Small DC motors and pumps
+* Wi-Fi
+* Arduino IDE
+* IoT platforms
+
+You do not need advanced programming knowledge to begin. Each tutorial will explain the connection, code, and working principle step by step.
+
+## Ready to Start?
+
+Continue with **What is IoT?** to understand how IoT devices collect data, communicate, and perform useful tasks.

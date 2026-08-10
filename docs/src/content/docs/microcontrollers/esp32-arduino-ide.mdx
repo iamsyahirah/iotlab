@@ -1,0 +1,205 @@
+---
+title: ESP32 with Arduino IDE
+description: Set up the ESP32 in Arduino IDE and upload your first test program.
+---
+
+import { Steps } from '@astrojs/starlight/components'
+
+Before starting the practical IoT projects, you need to prepare the **ESP32** so that it can be programmed using **Arduino IDE**.
+
+This setup only needs to be done once on your computer.
+
+## Step 1: Install Arduino IDE
+
+<Steps>
+
+1. Download and install [Arduino IDE](https://www.arduino.cc/en/software) from the official Arduino website.
+
+2. After installation, open Arduino IDE.
+
+</Steps>
+
+## Step 2: Add ESP32 Board Support
+
+Arduino IDE does not include ESP32 support by default, so you need to add it.
+
+<Steps>
+
+1. Open **File → Preferences**
+    
+
+2. Find **Additional Boards Manager URLs**
+  
+
+3. Add the ESP32 board package URL:
+
+    ```text
+    https://espressif.github.io/arduino-esp32/package_esp32_index.json
+    ```
+
+4. Then click OK.
+
+</Steps>
+    
+:::note
+If there is already another URL in the field, add the ESP32 URL on a new line instead of deleting the existing one.
+:::
+
+## Step 3: Install the ESP32 Board Package
+
+<Steps>
+
+1. Open **Tools → Board → Boards Manager**
+
+2. Search for **esp32**
+
+3. Install **esp32 by Espressif Systems**
+  
+4. Wait until the installation is complete.
+
+</Steps>
+
+## Step 4: Connect the ESP32
+
+Connect the ESP32 to your computer using the USB cable.
+
+The ESP32 should receive power when it is connected.
+
+## Step 5: Select the ESP32 Board
+
+<Steps>
+
+1. Go to **Tools → Board**
+   
+
+2. Select **ESP32 Dev Module**
+  
+</Steps>
+
+:::note
+If your board has a specific model name, select the matching board instead.
+Different ESP32 boards may use slightly different board settings. If you are unsure, ESP32 Dev Module works for many common ESP32 development boards.
+:::
+
+## Step 6: Select the Port
+
+<Steps>
+
+1. Go to **Tools → Port**
+    
+2. Select the port connected to your ESP32. On Windows, you may see something like:
+
+    ```text
+    COM3
+    COM4
+    COM5
+    ```
+    
+    On macOS, the port may look similar to:
+
+    ```text
+    /dev/cu.usbserial-xxxx
+    ```
+3. If no port appears, check the troubleshooting section below.
+
+</Steps>
+
+## Step 7: Test the ESP32
+
+Before starting a project, test that the ESP32 can receive a program correctly.
+
+<Steps>
+
+1. Create a new Arduino sketch and enter:
+
+    ```c++
+    void setup() {
+      Serial.begin(115200);
+    }
+
+    void loop() {
+      Serial.println("ESP32 is working!");
+      delay(1000);
+    }
+    ```
+2. Click the Upload button.
+
+3. When the upload is complete, you should see a message similar to:
+
+    ```text
+    Done uploading
+    ```
+</Steps>
+
+## Step 8: Open Serial Monitor
+
+<Steps>
+
+1. Open **Tools → Serial Monitor**
+
+2. Set the baud rate to **115200**
+
+3. You should see:
+
+    ```text
+    ESP32 is working!
+    ESP32 is working!
+    ESP32 is working!
+    ```
+4. If you can see this message, your ESP32 is ready for the practical projects.
+
+</Steps>
+
+## Common Problems
+<Steps>
+
+1. If no port appears under **Tools → Port**
+
+    :::tip
+    1. Disconnect and reconnect the ESP32
+    2. Try another USB port
+    3. Try another USB cable
+    4. Make sure the USB cable supports data transfer
+    5. Restart Arduino IDE
+    :::
+
+2. Some ESP32 boards may also require a USB driver.
+
+    Common USB chips include:
+
+    :::tip
+    1. CP2102
+    2. CH340
+    :::
+
+3. Upload Stuck at "Connecting..."
+
+    Sometimes Arduino IDE may show:
+
+    ```text
+    Connecting...
+    ```
+    and the upload does not continue.
+
+    :::tip
+    1. Press and hold the `BOOT` button on the ESP32.
+    2. Click `Upload`.
+    3. Wait until Arduino IDE starts connecting.
+    4. Release the `BOOT` button when the upload begins.
+    :::
+
+4. Wrong Board Selected
+
+   If the upload fails, check **Tools → Board** . Make sure the correct ESP32 board is selected.For a common ESP32 development board, try **ESP32 Dev Module**
+
+5. Serial Monitor Shows Strange Characters
+
+    If the Serial Monitor displays **unreadable characters**, check the baud rate.
+
+    Your code uses:
+    ```text
+    Serial.begin(115200);
+    ```
+    Therefore, the Serial Monitor should also be set to **115200**
+
+</Steps>
