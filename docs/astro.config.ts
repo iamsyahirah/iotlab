@@ -45,8 +45,8 @@ export default defineConfig({
   ],
 },
         {
-          label: 'Resources',
-          items: [{ label: 'Plugins and Tools', link: '/resources/starlight/' }],
+          label: 'Sensors',
+          items: [{ label: 'DHT11', link: '/sensors/dht11/' }],
         },
         {
           label: 'Examples',
